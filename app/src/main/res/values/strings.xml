@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Baby Sleep</string>
+
+    <string name="acercade">ACERCA DE</string>
+    <string name="inicio">INICIO</string>
+
+
+    <string name="open">Abrir</string>
+    <string name="close">Cerrar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="animales">Animales</string>
+    <string name="nature">Naturaleza</string>
+    <string name="transporte">Transporte</string>
+
+    <!-- Animals Items -->
+    <string name="cat">Gato</string>
+    <string name="leon">León</string>
+
+    <!-- Transportation Items -->
+    <string name="train">Tren</string>
+
+    <!-- Nature Items -->
+    <string name="rain">Lluvia</string>
+
+
+    <!-- Media Player -->
+    <string name="_0_min_0_sec">0 min, 0 sec</string>
+
+</resources>

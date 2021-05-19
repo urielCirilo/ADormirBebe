@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+
+    <item
+        android:id="@+id/inicio"
+        android:icon="@drawable/ic_home_24"
+        android:title="@string/inicio" />
+
+<!--        <item-->
+<!--            android:id="@+id/buscador"-->
+<!--            android:icon="@drawable/ic_search_24"-->
+<!--            android:title="@string/buscador" />-->
+
+<!--        <item-->
+<!--            android:id="@+id/sopladoPad"-->
+<!--            android:icon="@drawable/ic_pad_c_icon"-->
+<!--            android:title="@string/sopladopadM" />-->
+
+
+<!--        <item-->
+<!--            android:id="@+id/sopladoPet"-->
+<!--            android:icon="@drawable/ic_pet_b_icon"-->
+<!--            android:title="@string/sopladopetM" />-->
+
+
+
+<!--        <item-->
+<!--            android:id="@+id/envasado"-->
+<!--            android:icon="@drawable/envasado_icon"-->
+<!--            android:title="@string/envasadoM" />-->
+
+<!--        -->
+<!--       <item-->
+<!--           android:id="@+id/layoutPlanta"-->
+<!--           android:icon="@drawable/ic_goncal_layout_icon"-->
+<!--           android:title="@string/layoutplanta" />-->
+
+
+   </group>
+
+   <group android:checkableBehavior="single">
+
+       <item
+           android:title="">
+           <menu>
+               <item
+                   android:id="@+id/aboutus"
+                   android:icon="@drawable/ic_info"
+                   android:title="@string/acercade" />
+           </menu>
+
+       </item>
+
+   </group>
+
+
+
+</menu>
