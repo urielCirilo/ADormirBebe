@@ -38,20 +38,6 @@ class SoundsFragment : Fragment() {
         val adapter = MyGroupAdapter()
         val section = Section()
 
-
-//        val arrayListAnimals = ArrayList<SoundItem> ()
-//        arrayListAnimals.add(SoundItem(getString(R.string.leon), R.drawable.leon, "leon",  R.drawable.playbutton) )
-//        arrayListAnimals.add(SoundItem(getString(R.string.cat), R.drawable.cat, "cat",  R.drawable.playbutton))
-//
-//
-//        val arrayListTransportation = ArrayList<SoundItem> ()
-//        arrayListTransportation.add(SoundItem(getString(R.string.train), R.drawable.train, "train",  R.drawable.playbutton))
-//
-//
-//        val arrayListNature = ArrayList<SoundItem> ()
-//        arrayListNature.add(SoundItem(getString(R.string.rain), R.drawable.rain, "rain",  R.drawable.playbutton))
-
-
         if(category.equals(getString(R.string.animales))){
             binding.image.setImageResource(R.drawable.leon)
 
@@ -70,11 +56,6 @@ class SoundsFragment : Fragment() {
 
 
         }
-
-
-
-
-
 
         adapter.add(section)
         binding.recyclearViewListSounds.adapter = adapter
