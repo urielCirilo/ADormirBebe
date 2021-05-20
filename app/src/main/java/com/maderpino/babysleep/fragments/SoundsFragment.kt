@@ -6,12 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.maderpino.babysleep.Adapters.SoundAdapter
-import com.maderpino.babysleep.Models.SoundItem
+import com.maderpino.babysleep.Adapters.MyGroupAdapter
+import com.maderpino.babysleep.Item.AudioButtonItem
 import com.maderpino.babysleep.R
 import com.maderpino.babysleep.databinding.FragmentSoundsBinding
+import com.xwray.groupie.Section
 
 
 class SoundsFragment : Fragment() {
@@ -35,37 +35,49 @@ class SoundsFragment : Fragment() {
 
         binding.title.text = category
 
-
-        val arrayListAnimals = ArrayList<SoundItem> ()
-        arrayListAnimals.add(SoundItem(getString(R.string.leon), R.drawable.leon, "leon",  R.drawable.playbutton) )
-        arrayListAnimals.add(SoundItem(getString(R.string.cat), R.drawable.cat, "cat",  R.drawable.playbutton))
+        val adapter = MyGroupAdapter()
+        val section = Section()
 
 
-        val arrayListTransportation = ArrayList<SoundItem> ()
-        arrayListTransportation.add(SoundItem(getString(R.string.train), R.drawable.train, "train",  R.drawable.playbutton))
-
-
-        val arrayListNature = ArrayList<SoundItem> ()
-        arrayListNature.add(SoundItem(getString(R.string.rain), R.drawable.rain, "rain",  R.drawable.playbutton))
-
-
+//        val arrayListAnimals = ArrayList<SoundItem> ()
+//        arrayListAnimals.add(SoundItem(getString(R.string.leon), R.drawable.leon, "leon",  R.drawable.playbutton) )
+//        arrayListAnimals.add(SoundItem(getString(R.string.cat), R.drawable.cat, "cat",  R.drawable.playbutton))
+//
+//
+//        val arrayListTransportation = ArrayList<SoundItem> ()
+//        arrayListTransportation.add(SoundItem(getString(R.string.train), R.drawable.train, "train",  R.drawable.playbutton))
+//
+//
+//        val arrayListNature = ArrayList<SoundItem> ()
+//        arrayListNature.add(SoundItem(getString(R.string.rain), R.drawable.rain, "rain",  R.drawable.playbutton))
 
 
         if(category.equals(getString(R.string.animales))){
             binding.image.setImageResource(R.drawable.leon)
-            val soundAdapterAnimals = SoundAdapter(arrayListAnimals, requireContext())
-            binding.recyclearViewListSounds.adapter = soundAdapterAnimals
+
+            section.add(AudioButtonItem( getString(R.string.leon), R.drawable.leon,R.raw.leon))
+            section.add(AudioButtonItem( getString(R.string.cat), R.drawable.cat, R.raw.cat))
+
+
         }else if (category.equals(getString(R.string.transporte))){
             binding.image.setImageResource(R.drawable.coche)
 
-            val soundAdapterTransportation = SoundAdapter(arrayListTransportation, requireContext())
-            binding.recyclearViewListSounds.adapter = soundAdapterTransportation
+            section.add(AudioButtonItem( getString(R.string.train), R.drawable.train,R.raw.train))
 
-            }else if ((category.equals(getString(R.string.nature)))){
+        }else if ((category.equals(getString(R.string.nature)))){
             binding.image.setImageResource(R.drawable.tree)
-            val soundAdapterNature = SoundAdapter(arrayListNature, requireContext())
-            binding.recyclearViewListSounds.adapter = soundAdapterNature
+            section.add(AudioButtonItem( getString(R.string.rain), R.drawable.rain,R.raw.rain))
+
+
         }
+
+
+
+
+
+
+        adapter.add(section)
+        binding.recyclearViewListSounds.adapter = adapter
 
         binding.recyclearViewListSounds.setHasFixedSize(true)
         binding.recyclearViewListSounds.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)

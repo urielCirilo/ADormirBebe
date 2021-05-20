@@ -26,7 +26,7 @@ class SoundAdapter (val arrayList: ArrayList<SoundItem>, val context: Context):
         var imageButtonPlay: ImageView
         var controlSound = false
         var mPlayer: MediaPlayer?= null
-        var posicionMarcada = 0;
+        var currentPlayingPosition = -1;
 
         lateinit var nameSound:String
 
@@ -63,8 +63,14 @@ class SoundAdapter (val arrayList: ArrayList<SoundItem>, val context: Context):
         Picasso.get().load(arrayList[position].imageButtonPlay).into(holder.imageButtonPlay)
 
         holder.imageButtonPlay.setOnClickListener {
-
-            if(!holder.controlSound) {
+            if (holder.mPlayer?.isPlaying == true){
+                Picasso.get().load(R.drawable.playbutton).into(holder.imageButtonPlay)
+                holder.mPlayer?.stop()
+                holder.mPlayer?.reset()
+                holder.mPlayer?.release()
+                holder.mPlayer = null
+                holder.controlSound = false
+            }else{
                 val rawResId = context.resIdByName(holder.nameSound, "raw")
                 holder.mPlayer = MediaPlayer.create(context, rawResId)
                 holder.mPlayer!!.start()
@@ -72,17 +78,7 @@ class SoundAdapter (val arrayList: ArrayList<SoundItem>, val context: Context):
                 holder.controlSound = true
                 Log.d("Array: ", arrayList.size.toString())
 
-
-            }else{
-                Picasso.get().load(R.drawable.playbutton).into(holder.imageButtonPlay)
-                holder.mPlayer?.stop()
-                holder.mPlayer?.reset()
-                holder.mPlayer?.release()
-                holder.mPlayer = null
-                holder.controlSound = false
-
             }
-
 
         }
 

@@ -54,6 +54,10 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.3'
 
+    
+    implementation 'com.xwray:groupie:2.0.3'
+    implementation 'com.google.android.exoplayer:exoplayer:2.9.6'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
 
 
 
